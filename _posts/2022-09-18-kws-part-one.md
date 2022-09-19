@@ -30,7 +30,7 @@ The code and exercises were designed for the audio track of [ML summer school](h
 
 The big picture is shown below and will make sense over the cause of the series.
 
-![Figure 1: Overview of the keyword spotting app](/assets/img/1*JpDqPVPyZ8Gr9NFOU-1F9A.png)*Figure 1: Overview of the keyword spotting app*
+![Figure 1: Overview of the keyword spotting app](/assets/img/1*JpDqPVPyZ8Gr9NFOU-1F9A.png#center)*Figure 1: Overview of the keyword spotting app*
 
 We start on the left with the raw audio signal and end up with a detected keyword on the very end of the pipeline. There are roughly three parts of the keyword spotter: Feature extractor, classifier and post processor. We will discuss the Feature Extractor in the following.
 
@@ -57,14 +57,14 @@ The DFT decomposes a sequence of values into a finite sum of sin and cos functio
 
 This is more compact and is shown in the first row below:
 
-![Equation 1: Relation between DFT and inverse DFT coefficients ](/assets/img/1*ZlOW-Gj1caW_cJ1ONFGQVw.png)*Equation 1: Relation between DFT and inverse DFT coefficients *
+![Equation 1: Relation between DFT and inverse DFT coefficients ](/assets/img/1*ZlOW-Gj1caW_cJ1ONFGQVw.png)*Equation 1: Relation between DFT and inverse DFT coefficients*
 
 The coefficients of that expansion which are also called the DFT of the signal, can be obtained as shown in the second row. Here a is the series in the time domain and hatted a’s are the coefficients/DFT of the series in frequency domain. The absolute value of the coefficients is related to the energy stored in the accompanying frequency.
 > Short Time FT (STFT)
 
 Now we are equipped with the tools to go back to our audio signal. To understand the time dependence of the frequencies in the signal, one can apply the discrete Fourier transform to consecutive, potentially overlapping segments of the signal in the time domain. This is called Short Time Fourier Transform (STFT). It is done by applying the DFT on L samples of the signal at a time, where L is chosen to correspond to a small-time interval, e.g. the amount of samples corresponding to 40 ms. (In our example with a sample frequency of 16 kHz this would be L=640 samples). The next application of DFT starts H (hopping size) samples later. Usually H<L, which means there is a stride (overlap) of S samples between consecutive windows.
 
-![Figure 4: STFT applied to an audio signal of N samples with window length L, hopping size H and stride S. Two DFT applications are shown. ](/assets/img/1*lIQFyl2KEUGfs51wIe8ZzQ.png)*Figure 4: STFT applied to an audio signal of N samples with window length L, hopping size H and stride S. Two DFT applications are shown. *
+![Figure 4: STFT applied to an audio signal of N samples with window length L, hopping size H and stride S. Two DFT applications are shown. ](/assets/img/1*lIQFyl2KEUGfs51wIe8ZzQ.png)*Figure 4: STFT applied to an audio signal of N samples with window length L, hopping size H and stride S. Two DFT applications are shown.*
 
 The smaller we choose L, the better the time resolution gets. This comes at a cost: Smaller L’s mean less terms in the corresponding DFT series in equation 1, meaning we have a worse frequency resolution. (Note that the frequencies go with 1/N which is L in the case of STFT).
 
@@ -81,7 +81,7 @@ This is great! We have a human readable, more compact form of the signal. In the
 
 It is known that the human ear (which is a great tool for speech recognition) perceives frequencies in a non-linear fashion. It is very good at distinguishing small differences of small frequencies, while small differences at big frequencies sound very similar to us. Therefore, it is good practice to transform the frequency axis according to the MEL scale:
 
-![equation 2: Mel scale. ](/assets/img/1*b94Mke2ShqbE6JDvAudQrA.png)*equation 2: Mel scale. *
+![equation 2: Mel scale. ](/assets/img/1*b94Mke2ShqbE6JDvAudQrA.png)*equation 2: Mel scale.*
 
 In practice we apply several triangular filters equidistantly to the MEL scaled frequency axis and thereby obtain a value for each of the applications of the filter. Doing this, we look closer at smaller frequencies, where the interval is small and have a rougher look at bigger frequencies, where the filter covers a large frequency interval. This is illustrated in the following diagram.
 
