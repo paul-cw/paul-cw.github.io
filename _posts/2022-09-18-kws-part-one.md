@@ -1,3 +1,13 @@
+---
+layout: post
+title: Hands on Keyword Spotting 
+subtitle: Part 1/3
+cover-img: /blog/docs/assets/1*R33jTobYMFsbvzGd2WljJw.jpeg
+thumbnail-img: /blog/docs/assets/1*R33jTobYMFsbvzGd2WljJw.jpeg
+share-img: /blog/docs/assets/1*R33jTobYMFsbvzGd2WljJw.jpeg
+tags: [deep learning, audio, keyword spotting, tutorial]
+---
+
 # Speech recognition 101: Hands on Keyword Spotting 1/3
 
 This 3-part tutorial series will take you on an adventure to build your own neural network keyword spotter with step-by-step lecture and coding exercises. Part one will discuss the processing of speech data.
