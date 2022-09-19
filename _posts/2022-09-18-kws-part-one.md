@@ -57,7 +57,7 @@ The DFT decomposes a sequence of values into a finite sum of sin and cos functio
 
 This is more compact and is shown in the first row below:
 
-![Equation 1: Relation between DFT and inverse DFT coefficients ](/assets/img/1*ZlOW-Gj1caW_cJ1ONFGQVw.png)*Equation 1: Relation between DFT and inverse DFT coefficients*
+![Equation 1: Relation between DFT and inverse DFT coefficients](/assets/img/1*ZlOW-Gj1caW_cJ1ONFGQVw.png)*Equation 1: Relation between DFT and inverse DFT coefficients*
 
 The coefficients of that expansion which are also called the DFT of the signal, can be obtained as shown in the second row. Here a is the series in the time domain and hatted a’s are the coefficients/DFT of the series in frequency domain. The absolute value of the coefficients is related to the energy stored in the accompanying frequency.
 > Short Time FT (STFT)
