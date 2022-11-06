@@ -1,9 +1,19 @@
 
+---
+layout: post
+title: Hands on Keyword Spotting
+subtitle: Part 3/3
+cover-img: /assets/img/1*ZZsnlev1o89P51RsYET2MQ.jpeg
+thumbnail-img: /assets/img/1*ZZsnlev1o89P51RsYET2MQ.jpeg
+share-img: /assets/img/1*ZZsnlev1o89P51RsYET2MQ.jpeg
+tags: [deep learning, audio, keyword spotting, tutorial]
+---
+
 # Speech recognition 101: Hands on Keyword Spotting 3/3
 
 This 3-part tutorial series will take you on an adventure to build your own neural network keyword spotter with step-by-step lecture and coding exercises. In part three we will build a small app to deploy and play with our keyword spotter.
 
-![source: pixabay](imga/1*ZZsnlev1o89P51RsYET2MQ.jpeg)*source: pixabay*
+![source: pixabay](/assets/img/1*ZZsnlev1o89P51RsYET2MQ.jpeg)*source: pixabay*
 
 ### The tutorial series
 
@@ -37,7 +47,7 @@ How does the whole application come together now? The whole process is shown in 
 
 The microphone sends a chunk of audio (black horizontal lines) to the **feature extractor**. It extracts and returns feature vectors, one for each chunk. The feature vectors are aggregated until a length of one second is achieved. (Three vertical bars in the Figure). If we already have the equivalence of one second of audio data gathered, we delete the oldest feature vector from the left and add the latest feature vector to the right. The result is an image of feature vectors (MFCCs) that gets updated always after a new chunk of audio has been processed.
 
-![](imga/1*gPuX6oOc3XAeCxv4QXZ1cw.png)
+![](/assets/img/1*gPuX6oOc3XAeCxv4QXZ1cw.png)
 
 The image is sent to the classifier. We have designed the **classifier **in such a way, that it returns class probabilities, where every class corresponds to a keyword (yes, no, …) or one of the non-keyword classes: silence and unknown. The classifier is applied whenever an updated image comes in (it could also use a different frequency, but it is easier for now to do it that way). Therefore, each audio chunk returns a probability vector after it has passed through the feature extractor and the classifier. The result is scratched in Figure one: We obtain a series of class probabilities. In the Figure red and green stand for probabilities of different keywords (they should add up to one).
 
