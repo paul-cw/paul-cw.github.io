@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title: Hands on Keyword Spotting
@@ -8,6 +7,7 @@ thumbnail-img: /assets/img/1*ZZsnlev1o89P51RsYET2MQ.jpeg
 share-img: /assets/img/1*ZZsnlev1o89P51RsYET2MQ.jpeg
 tags: [deep learning, audio, keyword spotting, tutorial]
 ---
+
 
 # Speech recognition 101: Hands on Keyword Spotting 3/3
 
