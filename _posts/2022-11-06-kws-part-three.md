@@ -31,7 +31,7 @@ The [code](https://github.com/paul-cw/tutorial_kws.git) and exercises were desig
 
 The big picture of the keyword spotter is shown below. We have dealt with the Feature Extractor, trained a classifier and will now build a post processor and put everything together.
 
-![Figure 1: big picture of the keyword spotting application.](/assets/img/cdn-images-1.imga1*Iaqu7cRSG21bDeiIy7ItBw.png)*Figure 1: big picture of the keyword spotting application.*
+![Figure 1: big picture of the keyword spotting application.](/assets/img/streaming_kws.png) *Figure 1: big picture of the keyword spotting application.*
 > Post Processor
 
 The post processor is the last puzzle piece we need to build. Its purpose is to interpret the classifier’s output and tell us when a keyword was detected and which one it was. We do this by processing the classifier’s output in two steps:
