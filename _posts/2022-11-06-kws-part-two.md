@@ -31,7 +31,8 @@ The [code](https://github.com/paul-cw/tutorial_kws.git) and exercises were desig
 
 The big picture of the keyword spotter is shown below. We have dealt with the Feature Extractor in the first part of the series and will now go towards the center piece of the application: The classifier.
 
-![Figure 1: big picture of the keyword spotting application. ](/assets/img/1*8Z1gleN2DyD5HjLrCRAdKQ.png)*Figure 1: big picture of the keyword spotting application. *
+![Figure 1: big picture of the keyword spotting application. ](/assets/img/1*8Z1gleN2DyD5HjLrCRAdKQ.png) 
+*Figure 1: big picture of the keyword spotting application.*
 
 While there are many possibilities, we will realize the keyword spotter as a classifier that predicts probabilities for certain words being present in a window of a fixed length of one second. Instead of words one could use phonemes, sub-words, or characters instead, each with their own advantages and disadvantages.
 
