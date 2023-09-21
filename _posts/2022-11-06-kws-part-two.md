@@ -31,7 +31,7 @@ The [code](https://github.com/paul-cw/tutorial_kws.git) and exercises were desig
 
 The big picture of the keyword spotter is shown below. We have dealt with the Feature Extractor in the first part of the series and will now go towards the center piece of the application: The classifier.
 
-![Figure 1: big picture of the keyword spotting application. ](/assets/img/1*8Z1gleN2DyD5HjLrCRAdKQ.png)*Figure 1: big picture of the keyword spotting application.*
+![Figure 1: big picture of the keyword spotting application. ](/assets/img/1*8Z1gleN2DyD5HjLrCRAdKQ.png) *Figure 1: big picture of the keyword spotting application.*
 
 While there are many possibilities, we will realize the keyword spotter as a classifier that predicts probabilities for certain words being present in a window of a fixed length of one second. Instead of words one could use phonemes, sub-words, or characters instead, each with their own advantages and disadvantages.
 
@@ -48,7 +48,7 @@ The typical steps in Machine Learning include:
 
 * **Training: up next.** We will want to train several (deep neural) models.
 
-* **Evaluation: up next. **We need suitable metrics to evaluate the quality of our models.
+* **Evaluation: up next.** We need suitable metrics to evaluate the quality of our models.
 
 ![Figure 2: Machine Learning cycle.](/assets/img/1*B01iTDVx7TUdgpkM8tmsVA.png)*Figure 2: Machine Learning cycle.*
 > Model architecture
@@ -73,7 +73,7 @@ In supervised deep learning the training algorithm usually tries to find local m
 
 It is 0 if the likelihood of classifying each instance in the training set correctly, is 1. While this is a great metric for the optimization problem that is solved in the background during training, it is more useful to use a different metric to judge how well our model works in real life. Therefore, it is useful to consider the possible cases when classifying an instance:
 
-![Figure 3: classification. TP: True Positive, FN: False Negative and so on. PP/PN stands for Predicted Positive/Negative. P/N stand for the total number of Positive/Negative events, respectively. ](/assets/img/1*yoCFI8m5AK2WkYs_8jJ_SA.png)*Figure 3: classification. TP: True Positive, FN: False Negative and so on. PP/PN stands for Predicted Positive/Negative. P/N stand for the total number of Positive/Negative events, respectively. *
+![Figure 3: classification. TP: True Positive, FN: False Negative and so on. PP/PN stands for Predicted Positive/Negative. P/N stand for the total number of Positive/Negative events, respectively. ](/assets/img/1*yoCFI8m5AK2WkYs_8jJ_SA.png) *Figure 3: classification. TP: True Positive, FN: False Negative and so on. PP/PN stands for Predicted Positive/Negative. P/N stand for the total number of Positive/Negative events, respectively.*
 
 Now when evaluating on a test dataset one can simply classify all instances and add up to obtain the total number of TP, FN, FP, TN events. From it one can calculate several metrics:
 
@@ -171,11 +171,11 @@ CNNs are much more efficient in terms of their network structure than FFNNs when
 
 The Figure shows that CNN layers do not just connect every neuron with every other neuron but use the same parameter values for the weights over the entire input. That reduces both the number of connections in the network as well as the number of free parameters of the model.
 
-An intuitive understanding of a CNN layer is presented on this [website](https://setosa.io/ev/image-kernels/) and most easily understood by considering classical image processing. Suppose one has a grayscale image of size (TxF) pixels and wants to find edges in the image. Then one would apply a **filter **to obtain the new image with just the edges of the objects in it.
+An intuitive understanding of a CNN layer is presented on this [website](https://setosa.io/ev/image-kernels/) and most easily understood by considering classical image processing. Suppose one has a grayscale image of size (TxF) pixels and wants to find edges in the image. Then one would apply a **filter** to obtain the new image with just the edges of the objects in it.
 
 ![Figure 10: gradient like filter applied to the input image.](/assets/img/1*FNbWdcHDz1i7zOXMtlqKNA.png)*Figure 10: gradient like filter applied to the input image.*
 
-Mathematically this means using a **kernel **to obtain a pixel in the new image as a weighted sum over the original pixel and its neighbors. In the example above we used the following kernel:
+Mathematically this means using a **kernel** to obtain a pixel in the new image as a weighted sum over the original pixel and its neighbors. In the example above we used the following kernel:
 
 ![Figure 11: kernel applied in Figure 10.](/assets/img/1*xhFaFUWbtDPZeCOrWdNEpw.png)*Figure 11: kernel applied in Figure 10.*
 
@@ -187,7 +187,7 @@ Many operations like edge finding can be described using different kernels. In a
 
 * a smaller feature map size compared to the input
 
-The former can be achieved by adding a frame of 0’s to the original image to artificially enlarge it and consequently the feature map size. This is called **padding**. The latter can be achieved by introducing strides or pooling. **Strides** is increasing the hop size when applying the filter from its default (one) to s, whereas **pooling **summarizes a group of pixels in a feature map to one value, e.g. via taking the maximum. A great visualization of the effect of parameters like stride can be found [here](https://theano-pymc.readthedocs.io/en/latest/tutorial/conv_arithmetic.html) and a great visualization as well as the mathematical formula in chapter 14, [here](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/).
+The former can be achieved by adding a frame of 0’s to the original image to artificially enlarge it and consequently the feature map size. This is called **padding**. The latter can be achieved by introducing strides or pooling. **Strides** is increasing the hop size when applying the filter from its default (one) to s, whereas **pooling** summarizes a group of pixels in a feature map to one value, e.g. via taking the maximum. A great visualization of the effect of parameters like stride can be found [here](https://theano-pymc.readthedocs.io/en/latest/tutorial/conv_arithmetic.html) and a great visualization as well as the mathematical formula in chapter 14, [here](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/).
 
 Let’s go back to our keyword spotting project. Since the structure of the network input (MFCC features) is similar to a grayscale image, we can use various CNN models that work well for image classification. A selection of ready to use Keras models can be found [here](https://keras.io/api/applications/). We will use one of the readily available models in the exercises as well.
 > Further improving the architecture
